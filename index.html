@@ -68,7 +68,7 @@
                             <h2 class="card-title">K. Accessories</h2>
                             <p class="font-semibold text-[#1111117e]">39.00 TK</p>
                             <div class="card-actions flex items-center">
-                                <i class="fa-solid fa-minus fa-2xl btn flex items-center" style="color: #fb7185;"></i><button class="btn btn-primary text-white bg-rose-400 hover:bg-rose-300 border-none ">Buy Now</button><i class="fa-solid fa-plus fa-2xl btn flex items-center" style="color: #fb7185;"></i>
+                                <i id="firstMinus" class="fa-solid fa-minus fa-2xl btn flex items-center" disabled style="color: #fb7185;"></i><button id="firstButton" class="btn btn-primary text-white bg-rose-400 hover:bg-rose-300 border-none w-[92.4px]">Buy Now</button><i id="firstPlus" class="fa-solid fa-plus fa-2xl btn flex items-center" disabled style="color: #fb7185;"></i>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                             <h2 class="card-title">K. Accessories</h2>
                             <p class="font-semibold text-[#1111117e]">25.00 TK</p>
                             <div class="card-actions flex items-center">
-                                <i class="fa-solid fa-minus fa-2xl btn flex items-center" style="color: #fb7185;"></i><button class="btn btn-primary text-white bg-rose-400 hover:bg-rose-300 border-none ">Buy Now</button><i class="fa-solid fa-plus fa-2xl btn flex items-center" style="color: #fb7185;"></i>
+                                <i class="fa-solid fa-minus fa-2xl btn flex items-center" disabled style="color: #fb7185;"></i><button class="btn btn-primary text-white bg-rose-400 hover:bg-rose-300 border-none ">Buy Now</button><i class="fa-solid fa-plus fa-2xl btn flex items-center" disabled style="color: #fb7185;"></i>
                             </div>
                         </div>
                     </div>
@@ -189,8 +189,8 @@
                 <div class="w-[300px] h-max bg-white rounded-md mt-24 ">
 
                   <div class="flex">
-                    <input type="text" class="border rounded-l-md pl-3" id="" placeholder="Coupon code">
-                    <button class="btn bg-pink-500 text-white border rounded-l-none rounded-r-md px-3 py-2">Apply</button>
+                    <input type="text" id="couponInput" class="border rounded-l-md pl-3" placeholder="Coupon code">
+                    <button id="couponButton" class="btn bg-pink-500 text-white border rounded-l-none rounded-r-md px-3 py-2" disabled>Apply</button>
                   </div>
                   
                   <div>
