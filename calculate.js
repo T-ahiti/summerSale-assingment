@@ -12,9 +12,6 @@ document.getElementById('firstPlus').addEventListener('click', function(){
     const getPrice = document.getElementById('firstPrice')
     const multiply = 39 * clickCount
     getPrice.innerText = multiply
-
-    const total = document.getElementById('totalPriceArea')
-    total.innerText = multiply
 })
 
 document.getElementById('firstMinus').addEventListener('click', function() {
@@ -45,3 +42,13 @@ const holderText = this.value
       document.getElementById('couponButton').setAttribute('disabled', 'true');
 }
 })
+
+function addToTotal(){
+    console.log(stuff)
+    const getTotal = document.getElementById('totalPriceArea')
+
+    const p = document.createElement('p')
+    p.innerHTML = '<div></div>'
+
+    getTotal.appendChild(p)
+}
