@@ -68,44 +68,75 @@ document.getElementById('secondMinus').addEventListener('click', function() {
 })
 
 
-document.getElementById('secondButton').addEventListener('click', function(){
-    document.getElementById("secondPlus").removeAttribute('disabled')
-    document.getElementById("secondMinus").removeAttribute('disabled')
+document.getElementById('thirdButton').addEventListener('click', function(){
+    document.getElementById("thirdPlus").removeAttribute('disabled')
+    document.getElementById("thirdMinus").removeAttribute('disabled')
 }); 
 
-let clickCount2 = 0
-document.getElementById('secondPlus').addEventListener('click', function(){
-clickCount2 ++;
-const getButton = document.getElementById('secondButton')
-getButton.innerText = clickCount2 
-const getPrice = document.getElementById('secondPrice')
-const multiply = 39 * clickCount2
+let clickCount3 = 0
+document.getElementById('thirdPlus').addEventListener('click', function(){
+clickCount3 ++;
+const getButton = document.getElementById('thirdButton')
+getButton.innerText = clickCount3 
+const getPrice = document.getElementById('thirdPrice')
+const multiply = 39 * clickCount3
 getPrice.innerText = multiply
 
-addToTotal('K. Accessories2 ', multiply)
+addToTotal('Home Cooker ', multiply)
 })
 
-document.getElementById('secondMinus').addEventListener('click', function() {
-clickCount2--; 
-const getPrice = document.getElementById('secondPrice')
-const multiply = 39 * clickCount2
+document.getElementById('thirdMinus').addEventListener('click', function() {
+clickCount3--; 
+const getPrice = document.getElementById('thirdPrice')
+const multiply = 39 * clickCount3
 getPrice.innerText = multiply
     
-if (clickCount2 >= 0) {
-    document.getElementById('secondButton').innerText = clickCount2;
+if (clickCount3 >= 0) {
+    document.getElementById('thirdButton').innerText = clickCount3;
 }
 else{
-    document.getElementById('secondMinus').setAttribute('disabled', 'true')
+    document.getElementById('thirdMinus').setAttribute('disabled', 'true')
 }
 
-addToTotal('K. Accessories2 ', multiply)
+addToTotal('Home Cooker ', multiply)
 })
 
 
 
 
 
+document.getElementById('thirdButton').addEventListener('click', function(){
+    document.getElementById("thirdPlus").removeAttribute('disabled')
+    document.getElementById("thirdMinus").removeAttribute('disabled')
+}); 
 
+let clickCount3 = 0
+document.getElementById('thirdPlus').addEventListener('click', function(){
+clickCount3 ++;
+const getButton = document.getElementById('thirdButton')
+getButton.innerText = clickCount3 
+const getPrice = document.getElementById('thirdPrice')
+const multiply = 39 * clickCount3
+getPrice.innerText = multiply
+
+addToTotal('Home Cooker ', multiply)
+})
+
+document.getElementById('thirdMinus').addEventListener('click', function() {
+clickCount3--; 
+const getPrice = document.getElementById('thirdPrice')
+const multiply = 39 * clickCount3
+getPrice.innerText = multiply
+    
+if (clickCount3 >= 0) {
+    document.getElementById('thirdButton').innerText = clickCount3;
+}
+else{
+    document.getElementById('thirdMinus').setAttribute('disabled', 'true')
+}
+
+addToTotal('Home Cooker ', multiply)
+})
 
 
 
