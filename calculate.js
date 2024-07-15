@@ -289,17 +289,6 @@ function addToTotal(name, multiply){
 
 
 
-// coupon
-const placeholder = document.getElementById('couponInput')
-placeholder.addEventListener('input', function(){
-const holderText = this.value
-    if(holderText === 'SELL200'){
-      document.getElementById('couponButton').removeAttribute('disabled');
-}
-    else{
-      document.getElementById('couponButton').setAttribute('disabled', 'true');
-}
-})
 
 // last total price area
 
@@ -310,13 +299,37 @@ function calculateTotalCost() {
 function updateTotalCostDisplay() {
     const totalCost = calculateTotalCost();
     const getArea = document.getElementById('updatedTotal');
-        getArea.innerHTML = `Total Cost: ${totalCost} <br> `;
+
     
     const input = document.getElementById('couponInput')   
     const holderText = input.value
     if(totalCost >= 200 && holderText === 'SELL200'){
-        getArea.innerHTML = `Total Cost: ${totalCost} <br> `;
-      
+        const discount = totalCost * 0.2;
+        const discountedTotal = totalCost - discount;
+
+        getArea.innerHTML = `Total Cost: ${totalCost} <br>
+                             Discount : ${discount} <br>
+                             Total : ${discountedTotal} <br>
+                             <button>Make Purchase</button>
+        `; 
+    }
+
+    else{
+        getArea.innerHTML = `Total Cost: ${totalCost} <br>
+                     <button> Make Purchase </button> `;
     }
 
 }
+
+const placeholder = document.getElementById('couponInput')
+const totalCost = calculateTotalCost();
+placeholder.addEventListener('input', function(){
+const holderText = this.value
+    if(holderText === 'SELL200' && totalCost >= 200){
+      document.getElementById('couponButton').removeAttribute('disabled');
+}
+    else{
+      document.getElementById('couponButton').setAttribute('disabled', 'true');
+}
+})
+
