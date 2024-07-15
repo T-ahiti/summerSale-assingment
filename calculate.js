@@ -154,7 +154,7 @@ const getPrice = document.getElementById('fifthPrice')
 const multiply = 39 * clickCount5
 getPrice.innerText = multiply
 
-addToTotal('Sports Back Cap ', multiply)
+addToTotal('Full Jersey Set ', multiply)
 })
 
 document.getElementById('fifthMinus').addEventListener('click', function() {
@@ -175,37 +175,37 @@ addToTotal('Full Jersey Set', multiply)
 
 
 
-document.getElementById('fourthButton').addEventListener('click', function(){
-    document.getElementById("fourthPlus").removeAttribute('disabled')
-    document.getElementById("fourthMinus").removeAttribute('disabled')
+document.getElementById('sixthButton').addEventListener('click', function(){
+    document.getElementById("sixthPlus").removeAttribute('disabled')
+    document.getElementById("sixthMinus").removeAttribute('disabled')
 }); 
 
 let clickCount6 = 0
-document.getElementById('fourthPlus').addEventListener('click', function(){
+document.getElementById('sixthPlus').addEventListener('click', function(){
 clickCount6 ++;
-const getButton = document.getElementById('fourthButton')
+const getButton = document.getElementById('sixthButton')
 getButton.innerText = clickCount6
-const getPrice = document.getElementById('fourthPrice')
+const getPrice = document.getElementById('sixthPrice')
 const multiply = 39 * clickCount6
 getPrice.innerText = multiply
 
-addToTotal('Sports Back Cap ', multiply)
+addToTotal('Sports cates ', multiply)
 })
 
-document.getElementById('fourthMinus').addEventListener('click', function() {
+document.getElementById('sixthMinus').addEventListener('click', function() {
 clickCount6--; 
-const getPrice = document.getElementById('fourthPrice')
+const getPrice = document.getElementById('sixthPrice')
 const multiply = 39 * clickCount6
 getPrice.innerText = multiply
     
 if (clickCount6 >= 0) {
-    document.getElementById('fourthButton').innerText = clickCount6;
+    document.getElementById('sixthButton').innerText = clickCount6;
 }
 else{
-    document.getElementById('fourthMinus').setAttribute('disabled', 'true')
+    document.getElementById('sixthMinus').setAttribute('disabled', 'true')
 }
 
-addToTotal('Sports Back Cap', multiply)
+addToTotal('Sports cates', multiply)
 })
 
 
@@ -253,4 +253,17 @@ function addToTotal(name, multiply){
         p.innerHTML = `${count + 1}. ${name} ${multiply}`;
         getTotal.appendChild(p);
     }
+}
+
+function finalTotal(){
+    console.log(''+ '' + multiply)
+
+    const getTotal = document.getElementById('totalPriceArea')
+    const count = getTotal.childElementCount
+
+    const p = document.createElement('p')
+    p.innerHTML = ${count +1}. ${name} ${multiply} 
+
+    getTotal.appendChild(p)
+
 }
