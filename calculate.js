@@ -2,7 +2,7 @@
 document.getElementById('firstButton').addEventListener('click', function(){
         document.getElementById("firstPlus").removeAttribute('disabled')
         document.getElementById("firstMinus").removeAttribute('disabled')
-});
+}); 
 
 let clickCount = 0
 document.getElementById('firstPlus').addEventListener('click', function(){
@@ -12,6 +12,8 @@ document.getElementById('firstPlus').addEventListener('click', function(){
     const getPrice = document.getElementById('firstPrice')
     const multiply = 39 * clickCount
     getPrice.innerText = multiply
+
+    addToTotal('K. Accessories 1', multiply)
 })
 
 document.getElementById('firstMinus').addEventListener('click', function() {
@@ -43,8 +45,8 @@ const holderText = this.value
 }
 })
 
-function addToTotal(){
-    console.log(stuff)
+function addToTotal(name, multiply){
+    console.log(name+ '' + multiply)
     const getTotal = document.getElementById('totalPriceArea')
 
     const p = document.createElement('p')
