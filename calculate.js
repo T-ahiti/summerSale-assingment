@@ -296,6 +296,22 @@ function calculateTotalCost() {
     return totals.multiply1 + totals.multiply2 + totals.multiply3 + totals.multiply4 + totals.multiply5 + totals.multiply6;
 }
 
+const placeholder = document.getElementById('couponInput')
+
+placeholder.addEventListener('input', function(){
+const holderText = placeholder.value
+const totalCost = calculateTotalCost();
+
+    if(holderText === 'SELL200' && totalCost >= 200){
+      document.getElementById('couponButton').removeAttribute('disabled');
+}
+    else{
+      document.getElementById('couponButton').setAttribute('disabled', 'true');
+}
+})
+
+
+
 function updateTotalCostDisplay() {
     const totalCost = calculateTotalCost();
     const getArea = document.getElementById('updatedTotal');
@@ -310,26 +326,13 @@ function updateTotalCostDisplay() {
         getArea.innerHTML = `Total Cost: ${totalCost} <br>
                              Discount : ${discount} <br>
                              Total : ${discountedTotal} <br>
-                             <button>Make Purchase</button>
+                             <button class="btn bg-pink-500 text-white border rounded-md px-3 py-2 w-[300px]">Make Purchase</button>
         `; 
     }
-
+ 
     else{
         getArea.innerHTML = `Total Cost: ${totalCost} <br>
-                     <button> Make Purchase </button> `;
+                     <button class="btn bg-pink-500 text-white border rounded-md px-3 py-2  w-[300px]"> Make Purchase </button> `;
     }
-
+ 
 }
-
-const placeholder = document.getElementById('couponInput')
-const totalCost = calculateTotalCost();
-placeholder.addEventListener('input', function(){
-const holderText = this.value
-    if(holderText === 'SELL200' && totalCost >= 200){
-      document.getElementById('couponButton').removeAttribute('disabled');
-}
-    else{
-      document.getElementById('couponButton').setAttribute('disabled', 'true');
-}
-})
-
