@@ -322,6 +322,7 @@ function updateTotalCostDisplay() {
         getArea.innerHTML = `Total Cost: ${totalCost} <br>
                              Discount : ${discount} <br>
                              Total : ${discountedTotal} <br>
+                             
                             <button class="btn bg-pink-500 text-white border rounded-md px-3 py-2 w-[300px]" onclick="my_modal_1.showModal()">Make Purchase</button>
                             <dialog id="my_modal_1" class="modal">
                               <div class="modal-box">
@@ -341,7 +342,21 @@ function updateTotalCostDisplay() {
  
     else{
         getArea.innerHTML = `Total Cost: ${totalCost} <br>
-                     <button class="btn bg-pink-500 text-white border rounded-md px-3 py-2  w-[300px]"> Make Purchase </button> `;
+                      <button class="btn bg-pink-500 text-white border rounded-md px-3 py-2 w-[300px]" onclick="my_modal_1.showModal()">Make Purchase</button>
+                      <dialog id="my_modal_1" class="modal">
+                        <div class="modal-box">
+                          <img src="images/congo.png" class="mx-auto">
+                          <h3 class="text-center text-lg font-bold">Congratulations</h3>
+                          <p class="text-center py-4">You Purchased the product</p>
+                          <div class="modal-action">
+                            <form method="dialog">
+                              <button class="text-center btn bg-pink-500 text-white border rounded-md px-3 py-2">Go Home</button>
+                            </form>
+                          </div>
+                        </div>
+                      </dialog>
+                                             
+                     `;
     }
  
 }
