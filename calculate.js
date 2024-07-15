@@ -32,6 +32,95 @@ document.getElementById('firstMinus').addEventListener('click', function() {
     addToTotal('K. Accessories ', multiply)
 })
 
+
+
+document.getElementById('secondButton').addEventListener('click', function(){
+        document.getElementById("secondPlus").removeAttribute('disabled')
+        document.getElementById("secondMinus").removeAttribute('disabled')
+}); 
+
+let clickCount2 = 0
+document.getElementById('secondPlus').addEventListener('click', function(){
+    clickCount2 ++;
+    const getButton = document.getElementById('secondButton')
+    getButton.innerText = clickCount2 
+    const getPrice = document.getElementById('secondPrice')
+    const multiply = 39 * clickCount2
+    getPrice.innerText = multiply
+
+    addToTotal('K. Accessories2 ', multiply)
+})
+
+document.getElementById('secondMinus').addEventListener('click', function() {
+    clickCount2--; 
+    const getPrice = document.getElementById('secondPrice')
+    const multiply = 39 * clickCount2
+    getPrice.innerText = multiply
+        
+    if (clickCount2 >= 0) {
+        document.getElementById('secondButton').innerText = clickCount2;
+    }
+    else{
+        document.getElementById('secondMinus').setAttribute('disabled', 'true')
+    }
+
+    addToTotal('K. Accessories2 ', multiply)
+})
+
+
+document.getElementById('secondButton').addEventListener('click', function(){
+    document.getElementById("secondPlus").removeAttribute('disabled')
+    document.getElementById("secondMinus").removeAttribute('disabled')
+}); 
+
+let clickCount2 = 0
+document.getElementById('secondPlus').addEventListener('click', function(){
+clickCount2 ++;
+const getButton = document.getElementById('secondButton')
+getButton.innerText = clickCount2 
+const getPrice = document.getElementById('secondPrice')
+const multiply = 39 * clickCount2
+getPrice.innerText = multiply
+
+addToTotal('K. Accessories2 ', multiply)
+})
+
+document.getElementById('secondMinus').addEventListener('click', function() {
+clickCount2--; 
+const getPrice = document.getElementById('secondPrice')
+const multiply = 39 * clickCount2
+getPrice.innerText = multiply
+    
+if (clickCount2 >= 0) {
+    document.getElementById('secondButton').innerText = clickCount2;
+}
+else{
+    document.getElementById('secondMinus').setAttribute('disabled', 'true')
+}
+
+addToTotal('K. Accessories2 ', multiply)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // coupon
 const placeholder = document.getElementById('couponInput')
 placeholder.addEventListener('input', function(){
