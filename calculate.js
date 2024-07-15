@@ -350,13 +350,19 @@ function updateTotalCostDisplay() {
                           <p class="text-center py-4">You Purchased the product</p>
                           <div class="modal-action">
                             <form method="dialog">
-                              <button class="text-center btn bg-pink-500 text-white border rounded-md px-3 py-2">Go Home</button>
+                              <button id="homeButton" class="text-center btn bg-pink-500 text-white border rounded-md px-3 py-2">Go Home</button>
                             </form>
                           </div>
                         </div>
                       </dialog>
-                                             
-                     `;
+                      `;
+
+                       setTimeout(function() {
+                            document.getElementById('homeButton').onclick = function() {
+                                window.location.href = 'index.html';
+                            };
+                        }, 0);
+                     
     }
  
 }
