@@ -140,6 +140,74 @@ addToTotal('Sports Back Cap', multiply)
 
 
 
+document.getElementById('fifthButton').addEventListener('click', function(){
+    document.getElementById("fifthPlus").removeAttribute('disabled')
+    document.getElementById("fifthMinus").removeAttribute('disabled')
+}); 
+
+let clickCount5 = 0
+document.getElementById('fifthPlus').addEventListener('click', function(){
+clickCount5 ++;
+const getButton = document.getElementById('fifthButton')
+getButton.innerText = clickCount5 
+const getPrice = document.getElementById('fifthPrice')
+const multiply = 39 * clickCount5
+getPrice.innerText = multiply
+
+addToTotal('Sports Back Cap ', multiply)
+})
+
+document.getElementById('fifthMinus').addEventListener('click', function() {
+clickCount5--; 
+const getPrice = document.getElementById('fifthPrice')
+const multiply = 39 * clickCount5
+getPrice.innerText = multiply
+    
+if (clickCount5 >= 0) {
+    document.getElementById('fifthButton').innerText = clickCount5;
+}
+else{
+    document.getElementById('fifthMinus').setAttribute('disabled', 'true')
+}
+
+addToTotal('Full Jersey Set', multiply)
+})
+
+
+
+document.getElementById('fourthButton').addEventListener('click', function(){
+    document.getElementById("fourthPlus").removeAttribute('disabled')
+    document.getElementById("fourthMinus").removeAttribute('disabled')
+}); 
+
+let clickCount6 = 0
+document.getElementById('fourthPlus').addEventListener('click', function(){
+clickCount6 ++;
+const getButton = document.getElementById('fourthButton')
+getButton.innerText = clickCount6
+const getPrice = document.getElementById('fourthPrice')
+const multiply = 39 * clickCount6
+getPrice.innerText = multiply
+
+addToTotal('Sports Back Cap ', multiply)
+})
+
+document.getElementById('fourthMinus').addEventListener('click', function() {
+clickCount6--; 
+const getPrice = document.getElementById('fourthPrice')
+const multiply = 39 * clickCount6
+getPrice.innerText = multiply
+    
+if (clickCount6 >= 0) {
+    document.getElementById('fourthButton').innerText = clickCount6;
+}
+else{
+    document.getElementById('fourthMinus').setAttribute('disabled', 'true')
+}
+
+addToTotal('Sports Back Cap', multiply)
+})
+
 
 
 
