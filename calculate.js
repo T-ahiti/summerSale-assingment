@@ -105,37 +105,37 @@ addToTotal('Home Cooker ', multiply)
 
 
 
-document.getElementById('thirdButton').addEventListener('click', function(){
-    document.getElementById("thirdPlus").removeAttribute('disabled')
-    document.getElementById("thirdMinus").removeAttribute('disabled')
+document.getElementById('fourthButton').addEventListener('click', function(){
+    document.getElementById("fourthPlus").removeAttribute('disabled')
+    document.getElementById("fourthMinus").removeAttribute('disabled')
 }); 
 
-let clickCount3 = 0
-document.getElementById('thirdPlus').addEventListener('click', function(){
-clickCount3 ++;
-const getButton = document.getElementById('thirdButton')
-getButton.innerText = clickCount3 
-const getPrice = document.getElementById('thirdPrice')
-const multiply = 39 * clickCount3
+let clickCount4 = 0
+document.getElementById('fourthPlus').addEventListener('click', function(){
+clickCount4 ++;
+const getButton = document.getElementById('fourthButton')
+getButton.innerText = clickCount4 
+const getPrice = document.getElementById('fourthPrice')
+const multiply = 39 * clickCount4
 getPrice.innerText = multiply
 
-addToTotal('Home Cooker ', multiply)
+addToTotal('Sports Back Cap ', multiply)
 })
 
-document.getElementById('thirdMinus').addEventListener('click', function() {
-clickCount3--; 
-const getPrice = document.getElementById('thirdPrice')
-const multiply = 39 * clickCount3
+document.getElementById('fourthMinus').addEventListener('click', function() {
+clickCount4--; 
+const getPrice = document.getElementById('fourthPrice')
+const multiply = 39 * clickCount4
 getPrice.innerText = multiply
     
-if (clickCount3 >= 0) {
-    document.getElementById('thirdButton').innerText = clickCount3;
+if (clickCount4 >= 0) {
+    document.getElementById('fourthButton').innerText = clickCount4;
 }
 else{
-    document.getElementById('thirdMinus').setAttribute('disabled', 'true')
+    document.getElementById('fourthMinus').setAttribute('disabled', 'true')
 }
 
-addToTotal('Home Cooker ', multiply)
+addToTotal('Sports Back Cap', multiply)
 })
 
 
