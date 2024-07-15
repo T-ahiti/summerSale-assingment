@@ -258,4 +258,5 @@ function addToTotal(name, multiply){
 
 
 // last total price area
-const lastTotal = document.getElementById('totalPriceArea')
+const getArea = document.getElementById('totalPriceArea')
+console.log('hi')
