@@ -22,7 +22,7 @@ document.getElementById('firstPlus').addEventListener('click', function(){
     const getButton = document.getElementById('firstButton')
     getButton.innerText = clickCount 
     const getPrice = document.getElementById('firstPrice')
-    const multiply1 = 39 * clickCount
+    const multiply1 = 39.00 * clickCount
     getPrice.innerText = multiply1
 
     addToTotal('K. Accessories ', multiply1)
@@ -34,7 +34,7 @@ document.getElementById('firstPlus').addEventListener('click', function(){
 document.getElementById('firstMinus').addEventListener('click', function() {
     clickCount--; 
     const getPrice = document.getElementById('firstPrice')
-    const multiply1 = 39 * clickCount
+    const multiply1 = 39.00 * clickCount
     getPrice.innerText = multiply1
         
     if (clickCount >= 0) {
@@ -63,7 +63,7 @@ document.getElementById('secondPlus').addEventListener('click', function(){
     const getButton = document.getElementById('secondButton')
     getButton.innerText = clickCount2 
     const getPrice = document.getElementById('secondPrice')
-    const multiply2 = 39 * clickCount2
+    const multiply2 = 25.00 * clickCount2
     getPrice.innerText = multiply2
 
     addToTotal('K. Accessories2 ', multiply2)
@@ -75,7 +75,7 @@ document.getElementById('secondPlus').addEventListener('click', function(){
 document.getElementById('secondMinus').addEventListener('click', function() {
     clickCount2--; 
     const getPrice = document.getElementById('secondPrice')
-    const multiply2 = 39 * clickCount2
+    const multiply2 = 25.00 * clickCount2
     getPrice.innerText = multiply2
         
     if (clickCount2 >= 0) {
@@ -104,7 +104,7 @@ clickCount3 ++;
 const getButton = document.getElementById('thirdButton')
 getButton.innerText = clickCount3 
 const getPrice = document.getElementById('thirdPrice')
-const multiply3 = 39 * clickCount3
+const multiply3 = 49.00 * clickCount3
 getPrice.innerText = multiply3
 
 addToTotal('Home Cooker ', multiply3)
@@ -116,7 +116,7 @@ updateTotalCostDisplay()
 document.getElementById('thirdMinus').addEventListener('click', function() {
 clickCount3--; 
 const getPrice = document.getElementById('thirdPrice')
-const multiply3 = 39 * clickCount3
+const multiply3 = 49.00 * clickCount3
 getPrice.innerText = multiply3
     
 if (clickCount3 >= 0) {
@@ -145,7 +145,7 @@ clickCount4 ++;
 const getButton = document.getElementById('fourthButton')
 getButton.innerText = clickCount4 
 const getPrice = document.getElementById('fourthPrice')
-const multiply4 = 39 * clickCount4
+const multiply4 = 117.00 * clickCount4
 getPrice.innerText = multiply4
 
 addToTotal('Sports Back Cap ', multiply4)
@@ -157,7 +157,7 @@ updateTotalCostDisplay()
 document.getElementById('fourthMinus').addEventListener('click', function() {
 clickCount4--; 
 const getPrice = document.getElementById('fourthPrice')
-const multiply4 = 39 * clickCount4
+const multiply4 = 117.00 * clickCount4
 getPrice.innerText = multiply4
     
 if (clickCount4 >= 0) {
@@ -186,7 +186,7 @@ clickCount5 ++;
 const getButton = document.getElementById('fifthButton')
 getButton.innerText = clickCount5 
 const getPrice = document.getElementById('fifthPrice')
-const multiply5 = 39 * clickCount5
+const multiply5 = 156.00 * clickCount5
 getPrice.innerText = multiply5
 
 addToTotal('Full Jersey Set ', multiply5)
@@ -198,7 +198,7 @@ updateTotalCostDisplay()
 document.getElementById('fifthMinus').addEventListener('click', function() {
 clickCount5--; 
 const getPrice = document.getElementById('fifthPrice')
-const multiply5 = 39 * clickCount5
+const multiply5 = 156.00 * clickCount5
 getPrice.innerText = multiply5
     
 if (clickCount5 >= 0) {
@@ -227,7 +227,7 @@ clickCount6 ++;
 const getButton = document.getElementById('sixthButton')
 getButton.innerText = clickCount6
 const getPrice = document.getElementById('sixthPrice')
-const multiply6 = 39 * clickCount6
+const multiply6 = 159.00 * clickCount6
 getPrice.innerText = multiply6
 
 addToTotal('Sports cates ', multiply6)
@@ -239,7 +239,7 @@ updateTotalCostDisplay()
 document.getElementById('sixthMinus').addEventListener('click', function() {
 clickCount6--; 
 const getPrice = document.getElementById('sixthPrice')
-const multiply6 = 39 * clickCount6
+const multiply6 = 159.00 * clickCount6
 getPrice.innerText = multiply6
     
 if (clickCount6 >= 0) {
@@ -263,21 +263,6 @@ updateTotalCostDisplay()
 
 
 
-
-
-
-
-// coupon
-const placeholder = document.getElementById('couponInput')
-placeholder.addEventListener('input', function(){
-const holderText = this.value
-    if(holderText === 'SELL200'){
-      document.getElementById('couponButton').removeAttribute('disabled');
-}
-    else{
-      document.getElementById('couponButton').setAttribute('disabled', 'true');
-}
-})
 
 
 function addToTotal(name, multiply){
@@ -304,6 +289,18 @@ function addToTotal(name, multiply){
 
 
 
+// coupon
+const placeholder = document.getElementById('couponInput')
+placeholder.addEventListener('input', function(){
+const holderText = this.value
+    if(holderText === 'SELL200'){
+      document.getElementById('couponButton').removeAttribute('disabled');
+}
+    else{
+      document.getElementById('couponButton').setAttribute('disabled', 'true');
+}
+})
+
 // last total price area
 
 function calculateTotalCost() {
@@ -313,5 +310,13 @@ function calculateTotalCost() {
 function updateTotalCostDisplay() {
     const totalCost = calculateTotalCost();
     const getArea = document.getElementById('updatedTotal');
-        getArea.innerText = `Total Cost: ${totalCost}`;
-   }
+        getArea.innerHTML = `Total Cost: ${totalCost} <br> `;
+    
+    const input = document.getElementById('couponInput')   
+    const holderText = input.value
+    if(totalCost >= 200 && holderText === 'SELL200'){
+        getArea.innerHTML = `Total Cost: ${totalCost} <br> `;
+      
+    }
+
+}
