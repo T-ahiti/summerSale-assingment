@@ -13,7 +13,7 @@ document.getElementById('firstPlus').addEventListener('click', function(){
     const multiply = 39 * clickCount
     getPrice.innerText = multiply
 
-    addToTotal('K. Accessories 1', multiply)
+    addToTotal('K. Accessories ', multiply)
 })
 
 document.getElementById('firstMinus').addEventListener('click', function() {
@@ -29,8 +29,7 @@ document.getElementById('firstMinus').addEventListener('click', function() {
         document.getElementById('firstMinus').setAttribute('disabled', 'true')
     }
 
-    const total = document.getElementById('totalPriceArea')
-    total.innerText = multiply
+    addToTotal('K. Accessories ', multiply)
 })
 
 // coupon
@@ -45,12 +44,25 @@ const holderText = this.value
 }
 })
 
+
 function addToTotal(name, multiply){
-    console.log(name+ '' + multiply)
-    const getTotal = document.getElementById('totalPriceArea')
+    console.log(name + ' ' + multiply);
 
-    const p = document.createElement('p')
-    p.innerHTML = '<div></div>'
+    const getTotal = document.getElementById('totalPriceArea');
+    const count = getTotal.childElementCount;
 
-    getTotal.appendChild(p)
+    let exists = false;
+    for (let i = 0; i < count; i++) {
+        if (getTotal.children[i].textContent.includes(name)) {
+            getTotal.children[i].innerHTML = `${i + 1}. ${name} ${multiply}`;
+            exists = true;
+            break;
+        }
+    }
+
+    if (!exists) {
+        const p = document.createElement('p');
+        p.innerHTML = `${count + 1}. ${name} ${multiply}`;
+        getTotal.appendChild(p);
+    }
 }
